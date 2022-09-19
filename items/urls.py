@@ -14,7 +14,7 @@ urlpatterns = format_suffix_patterns([
     path('items/',
         views.ItemsList.as_view(),
         name='item-list'),
-    path('snippets/<int:pk>/',
+    path('items/<int:pk>/',
         views.ItemsDetail.as_view(),
         name='item-detail'),
     path('users/',
