@@ -4,7 +4,9 @@ from django.contrib.auth.models import User
 
 class ItemsSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
-
+    """
+    Serializer for Items model
+    """
     class Meta:
         model = Items
         fields = ['url', 'id', 'groc_item', 'notes', 'item_price', 'item_pprice', 'budget', 'date_created', 'owner',]
@@ -12,13 +14,13 @@ class ItemsSerializer(serializers.HyperlinkedModelSerializer):
 
     def create(self, validated_data):
         """
-        Create and return a new `Items` instance, given the validated data.
+        Create a new ` grocery Item` 
         """
         return Items.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
         """
-        Update and return an existing `Items` instance, given the validated data.
+        Update/return grocery 'Item' 
         """
         #instance.title = validated_data.get('title', instance.title)
         instance.groc_items = validated_data.get('groc_items', instance.groc_items)
@@ -31,7 +33,9 @@ class ItemsSerializer(serializers.HyperlinkedModelSerializer):
         return instance
 class UserSerializer(serializers.ModelSerializer):
     items = serializers.PrimaryKeyRelatedField(many=True, queryset=Items.objects.all())
-
+    """
+    Serializer for User 
+    """
     class Meta:
         model = User
         fields = ['id', 'username', 'items']
