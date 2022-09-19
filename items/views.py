@@ -16,7 +16,7 @@ from rest_framework import renderers
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
-        'items': reverse('items-list', request=request, format=format)
+        'items': reverse('item-list', request=request, format=format)
     })
 class ItemsList(generics.ListCreateAPIView):
     queryset = Items.objects.all()
