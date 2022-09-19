@@ -1,8 +1,14 @@
+# URLs for items
 from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
 from items import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
-# API endpoints
+""" 
+API endpoints for Items and User List and Detail
+These URLs are named to work with the HyperlinkedModelSerializer approach
+"""
+
+
 urlpatterns = format_suffix_patterns([
     path('', views.api_root),
     path('items/',
