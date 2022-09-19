@@ -2,4 +2,4 @@
 
 ## PGA
 ### Purpose
-Practice approach to data migration modeling with Django using 2 apps, 3 models for foriegn keys across the great app divide!!!
+This is a new approach to my Portfolio Project using the REST API Framework from Django. The use of Hyperlinked Serializers and Generic View approaches makes the new model more extensible, and much more flexible to modern web API programming. Refer to my original project for more details: https://github.com/PGA-dev/grocery

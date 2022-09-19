@@ -12,7 +12,7 @@ class Items(models.Model):
     owner = models.ForeignKey('auth.User', related_name='items', on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ['groc_item']
+        ordering = ['date_created']
         verbose_name_plural = "Items"
 
     def save(self, *args, **kwargs):
