@@ -3,7 +3,7 @@ from django.utils import timezone
 
 # Create your models here.
 class Items(models.Model):
-    groc_item = models.CharField(max_length=70)
+    groc_item = models.CharField(max_length=100)
     notes = models.TextField()
     item_price = models.DecimalField(max_digits=8, decimal_places=2)
     item_pprice = models.DecimalField(max_digits=8, decimal_places=2)
