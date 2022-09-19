@@ -6,6 +6,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 """ 
 API endpoints for Items and User List and Detail
 These URLs are named to work with the HyperlinkedModelSerializer approach
+with a single entry point functional view, the rest class based
 """
 
 
