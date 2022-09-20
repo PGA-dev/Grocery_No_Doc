@@ -22,7 +22,6 @@ class ItemsSerializer(serializers.HyperlinkedModelSerializer):
         """
         Update/return grocery 'Item' 
         """
-        #instance.title = validated_data.get('title', instance.title)
         instance.groc_items = validated_data.get('groc_items', instance.groc_items)
         instance.notes = validated_data.get('notes', instance.notes)
         instance.item_price = validated_data.get('item_price', instance.item_price)
