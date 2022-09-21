@@ -9,12 +9,11 @@ class Items(models.Model):
     notes = models.TextField()
     item_price = models.DecimalField(max_digits=8, decimal_places=2)
     item_pprice = models.DecimalField(max_digits=8, decimal_places=2)
-    budget = models.DecimalField(max_digits=8, decimal_places=2)
     date_created = models.DateTimeField(default=timezone.now)
     owner = models.ForeignKey('auth.User', related_name='items', on_delete=models.CASCADE)
-
+    
     class Meta:
-        ordering = ['date_created']
+        ordering = ['groc_item']
         verbose_name_plural = "Items"
 
     def save(self, *args, **kwargs):

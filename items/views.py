@@ -22,7 +22,7 @@ class ItemsList(generics.ListCreateAPIView):
     queryset = Items.objects.all()
     serializer_class = ItemsSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-
+    #permission_classes = [permissions.AllowAny]
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
@@ -30,7 +30,7 @@ class ItemsDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Items.objects.all()
     serializer_class = ItemsSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
-
+    #permission_classes = [permissions.AllowAny]
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer

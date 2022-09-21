@@ -9,7 +9,7 @@ class ItemsSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         model = Items
-        fields = ['url', 'id', 'groc_item', 'notes', 'item_price', 'item_pprice', 'budget', 'date_created', 'owner',]
+        fields = ['url', 'id', 'groc_item', 'notes', 'item_price', 'item_pprice', 'date_created', 'owner']
 
 
     def create(self, validated_data):
