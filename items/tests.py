@@ -6,6 +6,7 @@ from django.urls import reverse
 import pytest
 from  items.models import Items
 
+
 # def test_homepage_access():
 #     url = reverse('items')
 #     assert url == "/"
@@ -13,6 +14,16 @@ from  items.models import Items
 #*****************tests for CRUD******************
 
 # #fixture for db access
+
+class new_user():
+    def __init__(self, username: str, password: str):
+        self.username = username
+        self.password = password
+
+    def __repr__(self) -> str:
+        return f'{self.username}:{self.password}'
+        
+admin1 = new_user('admin', 'Complexity99!')
 @pytest.fixture
 def new_groc(db):
     listitem = Items.objects.create(
@@ -20,7 +31,7 @@ def new_groc(db):
         notes='pytest',
         item_price=10,
         item_pprice = 20,
-        owner = 'admin'
+        owner = admin1
     )
     return listitem
 
